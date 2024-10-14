@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="dev.nkkrisz.coffeelearn.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.nkkrisz.coffeelearn.Controller">
+    <MenuBar>
+        <Menu text="Műveletek">
+            <MenuItem fx:id="additionMenuItem" onAction="#onAdditionMenuItemClicked" text="Összeadás" />
+            <MenuItem fx:id="multiplicationMenuItem" onAction="#onMultiplicationMenuItemClicked" text="Szorzás" />
+        </Menu>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+    </MenuBar>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="taskLabel" style="-fx-font-size: 16;" text="Feladat" />
+
+    <TextField fx:id="answerField" maxWidth="150.0" promptText="Írd be a választ" />
+
+    <Button fx:id="checkButton" onAction="#onCheckButtonClicked" text="OK" />
+
+    <Label fx:id="feedbackLabel" text="" />
+
+    <Label fx:id="scoreLabel" text="Helyes válaszok: 0 | Helytelen válaszok: 0">
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" />
+      </VBox.margin></Label>
 </VBox>
